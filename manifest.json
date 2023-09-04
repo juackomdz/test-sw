@@ -6,7 +6,7 @@
     "dir": "ltr",
     "background_color": "#ffffff",
     "icons": [{
-      "src":"/img/monitor-svgrepo-com.png",
+      "src":"img/monitor-svgrepo-com.png",
          "sizes":"640x640",
          "type":"image/png"
       }],
