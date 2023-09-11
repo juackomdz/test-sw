@@ -10,11 +10,17 @@
 <body>
 
   <script>
-    let email = $("#correo").val();
-    let password = $("#pass").val();
-    if(!navigator.onLine){
-      alert("no cuenta con conexion");
-    }
+    window.addEventListener("offline", (e) => {
+
+      //alert("no cuenta con conexion");
+      window.location.href = "offline.html";
+    })
+      
+    window.addEventListener("online", (e) => {
+
+      window.location.href = "index.html";
+    })
+      
   </script>
     <input type="email" id="correo" placeholder="ingrese correo">
     <input type="password" id="pass" placeholder="ingres clave">
