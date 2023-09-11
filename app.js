@@ -15,6 +15,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 document.getElementById('btn').addEventListener("click", function() {
+//function guarda(){
     var email = document.getElementById('correo').value;
     var password = document.getElementById('pass').value;
   if(password.length>=6){
