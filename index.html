@@ -3,41 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <script type="module" src="./app.js"></script>
     <title>Document</title>
-    <link rel="manifest" href="./manifest.json">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 <body>
-
-  <script>
-    window.addEventListener("offline", (e) => {
-
-      //alert("no cuenta con conexion");
-      window.location.href = "offline.html";
-    })
-      
-    window.addEventListener("online", (e) => {
-
-      window.location.href = "index.html";
-    })
-      
-  </script>
-    <input type="email" id="correo" placeholder="ingrese correo">
-    <input type="password" id="pass" placeholder="ingres clave">
+    <input type="input" id="nombre" >
+    <input type="input" id="apellido" >
     <button id="btn">Enviar</button>
 
-    <script type="module" src="./app.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-         navigator.serviceWorker.register('service-worker.js')
-         .then(registration => {
-            console.log('Service Worker registrado con éxito:', registration);
-          })
-          .catch(error => {
-            console.error('Error al registrar el Service Worker:', error);
-          });
-      }
-    </script>
-      
 </body>
 </html>
