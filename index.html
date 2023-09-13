@@ -6,10 +6,18 @@
     <link rel="shortcut icon" href="#">
     <script type="module" src="./app.js"></script>
     <title>Document</title>
+    <script>
+        if(navigator.onLine){
+            alert("Esta online")
+        }
+        else{
+            alert("Esta offline")
+        }
+    </script>
 </head>
 <body>
-    <input type="input" id="nombre" >
-    <input type="input" id="apellido" >
+    <input type="input" id="nombre" placeholder="Nombre">
+    <input type="input" id="apellido" placeholder="Apellido">
     <button id="btn">Enviar</button>
 
 </body>
