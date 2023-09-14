@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,39 @@
     <script type="module" src="./app.js"></script>
     <title>Document</title>
     <script>
-        if(navigator.onLine){
-            alert("Esta online")
+
+        function store() {
+            var nom = document.getElementById("nombre").value;
+            var comn = document.getElementById("comentario").value;
+            if (typeof Storage !== 'undefined') {
+                localStorage.setItem('nombre', nom);
+                localStorage.setItem('coment', comn);
+                return true;
+            }
+            return false;
         }
-        else{
-            alert("Esta offline")
-        }
+        window.addEventListener('offline', function () {
+
+            store();
+            alert('No cuenta con conexion \n Los datos almacenados son: Nombre:' + localStorage.getItem('nombre'));
+        })
+
+        window.addEventListener('online', function () {
+            alert("Conectado");
+            localStorage.clear();
+        })
+
     </script>
 </head>
+
 <body>
     <input type="input" id="nombre" placeholder="Nombre">
-    <input type="input" id="apellido" placeholder="Apellido">
+    <textarea id="comentario" placeholder="Comentario"></textarea>
     <button id="btn">Enviar</button>
 
+    <script>
+
+    </script>
 </body>
+
 </html>

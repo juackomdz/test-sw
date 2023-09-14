@@ -25,38 +25,22 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 
-//function guardar(){
-  //guardarUser;
-  //var nombre = document.getElementById('nombre').value;
-  //var apellido = document.getElementById('apellido').value;
-
-  //db.collection("usuarios").add({
-    //nombre: nombre,
-    //apellido: apellido
-  //})
-  //.then((docRef) => {
-    //console.log("Document written with ID: ", docRef.id);
-  //})
-  //.catch((error) => {
-    //console.error("Error adding document: ", error);
-  //});
-//}
-
 document.getElementById('btn').addEventListener("click", async function () {
   //guardarUser;
   var nombre = document.getElementById("nombre").value;
-  var apellido = document.getElementById("apellido").value;
+  var coment = document.getElementById("comentario").value;
   try {
-    const docRef = await addDoc(collection(db, "usuarios"), {
+    const docRef = await addDoc(collection(db, "persona"), {
       nombre: nombre,
-      apellido: apellido
+      comentario: coment
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
+
+  var nombre = '';
+  var coment = '';
 });
 
-//const guardarUser = async() =>{
-  
-//}
+
