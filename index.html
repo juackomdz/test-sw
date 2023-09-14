@@ -22,7 +22,8 @@
         window.addEventListener('offline', function () {
 
             store();
-            alert('No cuenta con conexion \n Los datos almacenados son: Nombre:' + localStorage.getItem('nombre'));
+            document.getElementById("nombre").value = '';
+            document.getElementById("comentario").value = '';
         })
 
         window.addEventListener('online', function () {
@@ -37,7 +38,7 @@
     <input type="input" id="nombre" placeholder="Nombre">
     <textarea id="comentario" placeholder="Comentario"></textarea>
     <button id="btn">Enviar</button>
-
+    <button id="cons">Consultar</button>
     <script>
 
     </script>

@@ -24,6 +24,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+document.getElementById('cons').addEventListener("click", function () {
+  
+  alert('No cuenta con conexion \nLos datos almacenados son: Nombre: ' + localStorage.getItem('nombre'));
+})
 
 document.getElementById('btn').addEventListener("click", async function () {
   //guardarUser;
