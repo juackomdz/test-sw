@@ -7,40 +7,72 @@
     <link rel="shortcut icon" href="#">
     <script type="module" src="./app.js"></script>
     <title>Document</title>
+
+</head>
+
+<body>
+    <!--<input type="input" id="nombre" placeholder="Nombre">-->
+    <textarea id="comentario1" placeholder="Comentario 1" cols="50" rows="10"></textarea>
+    <textarea id="comentario2" placeholder="Comentario 2" cols="50" rows="10"></textarea>
+    <input id="chka" type="checkbox" value="A"> A
+    <input id="chkb" type="checkbox" value="B"> B
+    <!--<button id="btn">Enviar</button>-->
+    <button id="cons">Consultar</button>
+    <button id="clean">Limpiar</button>
+    <input id="guarda" type="button" value="Guardar">
+
     <script>
 
         function store() {
-            var nom = document.getElementById("nombre").value;
-            var comn = document.getElementById("comentario").value;
+
+            var comn1 = document.getElementById('comentario1');
+            var comn2 = document.getElementById('comentario2');
+            var check_a = document.getElementById('chka');
+            var check_b = document.getElementById('chkb');
             if (typeof Storage !== 'undefined') {
-                localStorage.setItem('nombre', nom);
-                localStorage.setItem('coment', comn);
+                if(comn1.value.length>=1){
+                    localStorage.setItem('coment1', comn1.value);
+                }
+                if(comn2.value.length>=1){
+                    localStorage.setItem('coment2', comn2.value);
+                }
+                
+                
+                if (check_a.checked) {
+                    localStorage.setItem('cha', check_a.value);
+                }
+
+                if (check_b.checked) {
+                    localStorage.setItem('chb', check_b.value);
+                }
+
                 return true;
             }
             return false;
         }
         window.addEventListener('offline', function () {
-
-            store();
-            document.getElementById("nombre").value = '';
-            document.getElementById("comentario").value = '';
+            alert('No esta conectado');
+            store()
+            //document.getElementById("nombre").value = '';
+            //document.getElementById("comentario").value = '';
         })
 
         window.addEventListener('online', function () {
             alert("Conectado");
-            localStorage.clear();
+            //store();
+            //localStorage.clear();
         })
 
-    </script>
-</head>
+        document.getElementById('guarda').addEventListener('click', function () {
+            localStorage.clear()
+            store()
+        })
 
-<body>
-    <input type="input" id="nombre" placeholder="Nombre">
-    <textarea id="comentario" placeholder="Comentario"></textarea>
-    <button id="btn">Enviar</button>
-    <button id="cons">Consultar</button>
-    <script>
-
+        document.getElementById('clean').addEventListener('click', function () {
+            document.getElementById('comentario1').value='';
+            document.getElementById('comentario2').value='';
+            localStorage.clear()
+        })
     </script>
 </body>
 

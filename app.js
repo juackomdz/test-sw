@@ -26,7 +26,8 @@ const db = getFirestore(app);
 
 document.getElementById('cons').addEventListener("click", function () {
   
-  alert('No cuenta con conexion \nLos datos almacenados son: Nombre: ' + localStorage.getItem('nombre'));
+  //alert('Los datos almacenados son: Nombre: ' + localStorage.getItem('nombre'));
+  window.location.href='offline.html'
 })
 
 document.getElementById('btn').addEventListener("click", async function () {
@@ -42,9 +43,7 @@ document.getElementById('btn').addEventListener("click", async function () {
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-
-  var nombre = '';
-  var coment = '';
 });
+
 
 

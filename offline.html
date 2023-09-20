@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        
-    </head>
-    <body>
-          <h1>No cuenta con conexión</h1>
-    </body>
-    </html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Consulta</h1>
+    <button id="consultar">Consultar</button>
+
+    <script>
+        document.getElementById('consultar').addEventListener('click', function () {
+            alert('Datos almacenados: \nComentario1: ' + localStorage.getItem('coment1')
+                + '\nComentario2: ' + localStorage.getItem('coment2')
+                + '\ncheck1:' + localStorage.getItem('cha')
+                + '\ncheck2:' + localStorage.getItem('chb'))
+        })
+    </script>
+</body>
+
+</html>
